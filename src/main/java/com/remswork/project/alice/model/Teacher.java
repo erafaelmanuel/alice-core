@@ -3,6 +3,8 @@ package com.remswork.project.alice.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.remswork.project.alice.model.support.Link;
+
 public class Teacher {
 	
 	private long id;

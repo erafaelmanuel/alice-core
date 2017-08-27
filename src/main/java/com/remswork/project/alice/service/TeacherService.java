@@ -2,14 +2,22 @@ package com.remswork.project.alice.service;
 
 import java.util.List;
 
+import com.remswork.project.alice.exception.TeacherException;
 import com.remswork.project.alice.model.Teacher;
 
 public interface TeacherService {
-	
-	public Teacher getTeacherById(long id);
-	public List<Teacher> getTeacherList();
-	public Teacher addTeacher(Teacher teacher);
-	public Teacher updateTeacherById(long id, Teacher newTeacher);
-	public Teacher deleteTeacherById(long id);
 
+    Teacher getTeacherById(long id) throws TeacherException;
+
+    List<Teacher> getTeacherList() throws TeacherException;
+
+    Teacher addTeacher(Teacher teacher) throws TeacherException;
+
+    Teacher addTeacher(Teacher teacher, long departmentId) throws TeacherException;
+
+    Teacher updateTeacherById(long id, Teacher newTeacher) throws TeacherException;
+
+    Teacher updateTeacherById(long id, Teacher newTeacher, long departmentId) throws TeacherException;
+
+    Teacher deleteTeacherById(long id) throws TeacherException;
 }

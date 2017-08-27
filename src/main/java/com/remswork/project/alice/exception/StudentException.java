@@ -1,17 +1,17 @@
 package com.remswork.project.alice.exception;
 
-public class DepartmentException extends Exception {
+public class StudentException extends Exception {
 
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public DepartmentException() {
+	public StudentException() {
         super();
     }
 
-    public DepartmentException(final String message) {
+    public StudentException(final String message) {
         super(message);
     }
 }

@@ -1,15 +1,19 @@
 package com.remswork.project.alice.service;
 
-import java.util.List;
-
+import com.remswork.project.alice.exception.DepartmentException;
 import com.remswork.project.alice.model.Department;
 
-public interface DepartmentService {
-	
-	public Department getDepartmentById(long id);
-	public List<Department> getDepartmentList();
-	public Department addDepartment(Department department);
-	public Department updateDepartment(long id, Department newDepartment);
-	public Department deleteDepartment(long id);
+import java.util.List;
 
+public interface DepartmentService {
+
+    Department getDepartmentById(long id) throws DepartmentException;
+
+    List<Department> getDepartmentList() throws DepartmentException;
+
+    Department addDepartment(Department department) throws DepartmentException;
+
+    Department updateDepartmentById(long id, Department newDepartment) throws DepartmentException;
+
+    Department deleteDepartmentById(long id) throws DepartmentException;
 }
