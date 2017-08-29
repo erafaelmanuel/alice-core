@@ -5,8 +5,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.remswork.project.alice.model.support.Link;
 
+@XmlRootElement
 public class Class {
 
     private long id;

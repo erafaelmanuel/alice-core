@@ -1,5 +1,8 @@
 package com.remswork.project.alice.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class UserDetail {
 
     private long id;

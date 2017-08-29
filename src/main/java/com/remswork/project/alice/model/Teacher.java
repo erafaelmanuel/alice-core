@@ -3,8 +3,11 @@ package com.remswork.project.alice.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.remswork.project.alice.model.support.Link;
 
+@XmlRootElement
 public class Teacher {
 	
 	private long id;
