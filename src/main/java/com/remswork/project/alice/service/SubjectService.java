@@ -7,9 +7,15 @@ import java.util.List;
 
 public interface SubjectService {
 
-    Subject getSubjectById(long id) throws SubjectException;
+	Subject getSubjectById(long id) throws SubjectException;
+
+    Subject getSubjectByClassAndTeacherId(long classId, long teacherId) throws SubjectException;
+
+    Subject getSubjectByScheduleId(long scheduleId) throws SubjectException;
 
     List<Subject> getSubjectList() throws SubjectException;
+
+    List<Subject> getSubjectListByTeacherId(long teacherId) throws SubjectException;
 
     Subject addSubject(Subject subject) throws SubjectException;
 

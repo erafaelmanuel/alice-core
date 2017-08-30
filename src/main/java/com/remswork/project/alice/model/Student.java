@@ -26,16 +26,22 @@ public class Student {
         super();
         links = new ArrayList<Link>();
     }
+    
+    public Student(long studentNumber, String firstName, String lastName, String middleName,
+            String gender, int age) {
+		 this();
+		 this.studentNumber = studentNumber;
+		 this.firstName = firstName;
+		 this.lastName = lastName;
+		 this.middleName = middleName;
+		 this.gender = gender;
+		 this.age = age;
+}
+    
 
     public Student(long studentNumber, String firstName, String lastName, String middleName,
                    String gender, int age, String imageSrc) {
-        this();
-        this.studentNumber = studentNumber;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.middleName = middleName;
-        this.gender = gender;
-        this.age = age;
+        this(studentNumber, firstName, lastName, middleName, gender, age);
         this.imageSrc = imageSrc;
     }
 

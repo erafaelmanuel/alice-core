@@ -60,6 +60,7 @@ public class Class {
         this.subject = subject;
     }
 
+    @Deprecated
     public Set<Schedule> getScheduleList() {
         return scheduleList;
     }

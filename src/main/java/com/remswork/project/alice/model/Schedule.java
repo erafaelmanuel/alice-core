@@ -14,6 +14,8 @@ public class Schedule {
     private String day;
     private String time;
     private String period;
+    private String room;
+    
     private List<Link> links;
 
     public Schedule() {
@@ -21,11 +23,17 @@ public class Schedule {
         links = new ArrayList<Link>();
     }
 
-    public Schedule(String day, String time, String period) {
+    public Schedule(String day, String time, String period, String room) {
         this();
         this.day = day;
         this.time = time;
         this.period = period;
+        this.room = room;
+    }
+    
+    public Schedule(long id, String day, String time, String period, String room) {
+        this(day, time, period, room);
+        this.id = id;
     }
 
     public long getId() {
@@ -60,7 +68,15 @@ public class Schedule {
         this.period = period;
     }
 
-    public List<Link> getLinks() {
+    public String getRoom() {
+		return room;
+	}
+
+	public void setRoom(String room) {
+		this.room = room;
+	}
+
+	public List<Link> getLinks() {
         return links;
     }
 
