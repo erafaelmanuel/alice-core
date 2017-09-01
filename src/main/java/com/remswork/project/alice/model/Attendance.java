@@ -19,7 +19,7 @@ public class Attendance {
 
 
     public Attendance() {
-        links = new ArrayList<>();
+    	links = new ArrayList<Link>();
     }
 
     public Attendance(String date, int status) {

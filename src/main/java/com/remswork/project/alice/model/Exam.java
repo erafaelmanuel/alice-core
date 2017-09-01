@@ -20,7 +20,7 @@ public class Exam {
     private List<Link> links;
 
     public Exam() {
-        links = new ArrayList<>();
+        links = new ArrayList<Link>();
     }
 
     public Exam(String title, String date, int itemTotal, int score) {

@@ -20,7 +20,7 @@ public class Recitation {
     private List<Link> links;
 
     public  Recitation() {
-        links = new ArrayList<>();
+    	links = new ArrayList<Link>();
     }
 
     public Recitation(String title, String date, int itemTotal, int score) {

@@ -22,9 +22,9 @@ public class Class {
     private List<Link> links;
 
     public Class() {
-        links = new ArrayList<>();
-        scheduleList = new HashSet<>();
-        studentList = new HashSet<>();
+    	links = new ArrayList<Link>();
+        scheduleList = new HashSet<Schedule>();
+        studentList = new HashSet<Student>();
     }
 
     public Class(Teacher teacher, Subject subject, Set<Schedule> scheduleList, Section section,

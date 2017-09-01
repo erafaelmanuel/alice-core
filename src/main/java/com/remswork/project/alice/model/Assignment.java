@@ -20,7 +20,7 @@ public class Assignment {
     private List<Link> links;
 
     public Assignment() {
-       links = new ArrayList<>();
+       links = new ArrayList<Link>();
     }
 
     public Assignment(String title, String date, int itemTotal, int score) {

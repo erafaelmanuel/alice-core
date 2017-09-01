@@ -23,8 +23,7 @@ public class Student {
     private List<Link> links;
 
     public Student(){
-        super();
-        links = new ArrayList<>();
+    	links = new ArrayList<Link>();
     }
 
     public Student(long studentNumber, String firstName, String middleName, String lastName,

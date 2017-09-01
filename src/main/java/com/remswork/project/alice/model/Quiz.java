@@ -1,5 +1,6 @@
 package com.remswork.project.alice.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
@@ -19,7 +20,7 @@ public class Quiz {
     private List<Link> links;
 
     public  Quiz() {
-        super();
+    	links = new ArrayList<Link>();
     }
 
     public Quiz(String title, String date, int itemTotal, int score) {

@@ -20,7 +20,7 @@ public class Project {
     private List<Link> links;
 
     public Project() {
-        links = new ArrayList<>();
+    	links = new ArrayList<Link>();
     }
 
     public Project(String title, String date, int itemTotal, int score) {

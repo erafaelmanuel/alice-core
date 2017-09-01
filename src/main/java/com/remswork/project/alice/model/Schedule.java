@@ -19,7 +19,6 @@ public class Schedule {
     private List<Link> links;
 
     public Schedule() {
-        super();
         links = new ArrayList<Link>();
     }
 

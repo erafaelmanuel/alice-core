@@ -17,7 +17,7 @@ public class Activity {
     private List<Link> links;
 
     public  Activity() {
-        links = new ArrayList<>();
+        links = new ArrayList<Link>();
     }
 
     public Activity(String title, String date, int itemTotal, int score) {
