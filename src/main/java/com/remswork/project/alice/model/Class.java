@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 import com.remswork.project.alice.model.support.Link;
 
@@ -21,9 +22,9 @@ public class Class {
     private List<Link> links;
 
     public Class() {
-        links = new ArrayList<Link>();
-        scheduleList = new HashSet<Schedule>();
-        studentList = new HashSet<Student>();
+        links = new ArrayList<>();
+        scheduleList = new HashSet<>();
+        studentList = new HashSet<>();
     }
 
     public Class(Teacher teacher, Subject subject, Set<Schedule> scheduleList, Section section,
@@ -60,6 +61,7 @@ public class Class {
         this.subject = subject;
     }
 
+    @XmlTransient
     @Deprecated
     public Set<Schedule> getScheduleList() {
         return scheduleList;
@@ -77,6 +79,8 @@ public class Class {
         this.section = section;
     }
 
+    @XmlTransient
+    @Deprecated
     public Set<Student> getStudentList() {
         return studentList;
     }
@@ -94,6 +98,14 @@ public class Class {
     }
 
     public void addLink(Link link) {
-        links.add(link);
+        boolean isExist = false;
+        for (Link eachLink : links) {
+            if(eachLink.getRel().equalsIgnoreCase(link.getRel())) {
+                isExist = true;
+                break;
+            }
+        }
+        if(!isExist)
+            links.add(link);
     }
 }

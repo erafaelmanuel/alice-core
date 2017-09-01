@@ -24,24 +24,23 @@ public class Student {
 
     public Student(){
         super();
-        links = new ArrayList<Link>();
+        links = new ArrayList<>();
     }
-    
-    public Student(long studentNumber, String firstName, String lastName, String middleName,
-            String gender, int age) {
-		 this();
-		 this.studentNumber = studentNumber;
-		 this.firstName = firstName;
-		 this.lastName = lastName;
-		 this.middleName = middleName;
-		 this.gender = gender;
-		 this.age = age;
-}
-    
 
-    public Student(long studentNumber, String firstName, String lastName, String middleName,
+    public Student(long studentNumber, String firstName, String middleName, String lastName,
+                   String gender, int age) {
+        this();
+        this.studentNumber = studentNumber;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.age = age;
+    }
+
+    public Student(long studentNumber, String firstName, String middleName, String lastName,
                    String gender, int age, String imageSrc) {
-        this(studentNumber, firstName, lastName, middleName, gender, age);
+        this(studentNumber, firstName, middleName, lastName, gender, age);
         this.imageSrc = imageSrc;
     }
 
@@ -140,6 +139,14 @@ public class Student {
     }
 
     public void addLink(Link link) {
-        links.add(link);
+        boolean isExist = false;
+        for (Link eachLink : links) {
+            if(eachLink.getRel().equalsIgnoreCase(link.getRel())) {
+                isExist = true;
+                break;
+            }
+        }
+        if(!isExist)
+            links.add(link);
     }
 }
