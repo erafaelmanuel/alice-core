@@ -1,7 +1,6 @@
-package com.remswork.project.alice.model;
+package com.remswork.projecct.alice.v1.model;
 
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,19 +9,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Section implements Serializable {
+public class Section {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private long id;
+    private long id;
     private String name;
     private Department department;
     private List<Link> links;
 
     public Section() {
-        links = new ArrayList<>();
+    	links = new ArrayList<Link>();
     }
 
     public Section(String name) {
@@ -62,15 +57,7 @@ public class Section implements Serializable {
         this.links = links;
     }
 
-    public void addLink(Link link){
-        boolean isExist = false;
-        for (Link eachLink : links) {
-            if(eachLink.getRel().equalsIgnoreCase(link.getRel())) {
-                isExist = true;
-                break;
-            }
-        }
-        if(!isExist)
-            links.add(link);
+    public void addLink(Link link) {
+        links.add(link);
     }
 }

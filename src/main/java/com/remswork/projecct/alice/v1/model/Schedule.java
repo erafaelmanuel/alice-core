@@ -1,6 +1,5 @@
-package com.remswork.project.alice.model;
+package com.remswork.projecct.alice.v1.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,22 +8,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Schedule implements Serializable {
+public class Schedule {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private long id;
+    private long id;
     private String day;
     private String time;
     private String period;
     private String room;
+    
     private List<Link> links;
 
     public Schedule() {
-        super();
-        links = new ArrayList<>();
+        links = new ArrayList<Link>();
     }
 
     public Schedule(String day, String time, String period, String room) {
@@ -34,8 +29,8 @@ public class Schedule implements Serializable {
         this.period = period;
         this.room = room;
     }
-
-    public Schedule(int id, String day, String time, String period, String room) {
+    
+    public Schedule(long id, String day, String time, String period, String room) {
         this(day, time, period, room);
         this.id = id;
     }
@@ -73,14 +68,14 @@ public class Schedule implements Serializable {
     }
 
     public String getRoom() {
-        return room;
-    }
+		return room;
+	}
 
-    public void setRoom(String room) {
-        this.room = room;
-    }
+	public void setRoom(String room) {
+		this.room = room;
+	}
 
-    public List<Link> getLinks() {
+	public List<Link> getLinks() {
         return links;
     }
 
@@ -88,15 +83,7 @@ public class Schedule implements Serializable {
         this.links = links;
     }
 
-    public void addLink(Link link){
-        boolean isExist = false;
-        for (Link eachLink : links) {
-            if(eachLink.getRel().equalsIgnoreCase(link.getRel())) {
-                isExist = true;
-                break;
-            }
-        }
-        if(!isExist)
-            links.add(link);
+    public void addLink(Link link) {
+        links.add(link);
     }
 }

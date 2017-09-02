@@ -1,6 +1,5 @@
-package com.remswork.project.alice.model;
+package com.remswork.projecct.alice.v1.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,34 +8,29 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Assignment implements Serializable {
+public class Project {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private long id;
+    private long id;
     private String title;
     private String date;
     private int itemTotal;
     private int score;
     private Student student;
     private Subject subject;
-    private Term term;
     private List<Link> links;
 
-    public Assignment() {
-       links = new ArrayList<>();
+    public Project() {
+    	links = new ArrayList<Link>();
     }
 
-    public Assignment(String title, String date, int itemTotal, int score) {
+    public Project(String title, String date, int itemTotal, int score) {
         this.title = title;
         this.date = date;
         this.itemTotal = itemTotal;
         this.score = score;
     }
 
-    public Assignment(long id, String title, String date, int itemTotal, int score) {
+    public Project(long id, String title, String date, int itemTotal, int score) {
         this(title, date, itemTotal, score);
         this.id = id;
     }
@@ -95,14 +89,6 @@ public class Assignment implements Serializable {
 
     public void setSubject(Subject subject) {
         this.subject = subject;
-    }
-
-    public Term getTerm() {
-        return term;
-    }
-
-    public void setTerm(Term term) {
-        this.term = term;
     }
 
     public List<Link> getLinks() {

@@ -1,6 +1,5 @@
-package com.remswork.project.alice.model;
+package com.remswork.projecct.alice.v1.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -12,13 +11,9 @@ import javax.xml.bind.annotation.XmlTransient;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Class implements Serializable {
-	
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private long id;
+public class Class {
+
+    private long id;
     private Teacher teacher;
     private Subject subject;
     private Set<Schedule> scheduleList;
@@ -27,9 +22,9 @@ public class Class implements Serializable {
     private List<Link> links;
 
     public Class() {
-        links = new ArrayList<>();
-        scheduleList = new HashSet<>();
-        studentList = new HashSet<>();
+    	links = new ArrayList<Link>();
+        scheduleList = new HashSet<Schedule>();
+        studentList = new HashSet<Student>();
     }
 
     public Class(Teacher teacher, Subject subject, Set<Schedule> scheduleList, Section section,

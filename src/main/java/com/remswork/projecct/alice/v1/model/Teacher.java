@@ -1,6 +1,5 @@
-package com.remswork.project.alice.model;
+package com.remswork.projecct.alice.v1.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +8,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Teacher implements Serializable {
+public class Teacher {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private long id;
 	private String firstName;
 	private String lastName;
@@ -26,19 +21,19 @@ public class Teacher implements Serializable {
 	
 	public Teacher() {
 		super();
-		links = new ArrayList<>();
+		links = new ArrayList<Link>();
 	}
 	
-	public Teacher(String firstName, String middleName, String lastName, String email) {
+	public Teacher(String firstName, String lastName, String middleName, String email) {
 		this();
 		this.firstName = firstName;
-		this.middleName = middleName;
 		this.lastName = lastName;
+		this.middleName = middleName;
 		this.email = email;
 	}
 
 	public Teacher(long id, String firstName, String lastName, String middleName, String email) {
-		this(firstName, middleName, lastName, email);
+		this(firstName, lastName, middleName, email);
 		this.id = id;
 	}
 
@@ -106,15 +101,7 @@ public class Teacher implements Serializable {
 		this.links = links;
 	}
 
-	public void addLink(Link link){
-		boolean isExist = false;
-		for (Link eachLink : links) {
-			if(eachLink.getRel().equalsIgnoreCase(link.getRel())) {
-				isExist = true;
-				break;
-			}
-		}
-		if(!isExist)
-			links.add(link);
+	public void addLink(Link link) {
+		links.add(link);
 	}
 }

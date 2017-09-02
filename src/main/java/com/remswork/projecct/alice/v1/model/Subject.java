@@ -1,6 +1,5 @@
-package com.remswork.project.alice.model;
+package com.remswork.projecct.alice.v1.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,55 +8,71 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Department implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Subject {
+	
 	private long id;
 	private String name;
+	private String code;
 	private String description;
+	private int unit;
 	private List<Link> links;
 	
-	public Department() {
+	public Subject() {
 		super();
-		links = new ArrayList<>();
+		links = new ArrayList<Link>();
 	}
 	
-	public Department(String name, String description) {
+	public Subject(String name, String code, String description, int unit) {
 		this();
 		this.name = name;
+		this.code = code;
 		this.description = description;
+		this.unit = unit;
 	}
 	
-	public Department(long id, String name, String description) {
-		this(name, description);
+	public Subject(long id, String name, String code, String description, int unit) {
+		this(name, code, description, unit);
 		this.id = id;
 	}
 
 	public long getId() {
 		return id;
 	}
-	
+
 	public void setId(long id) {
 		this.id = id;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getDescription() {
 		return description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public int getUnit() {
+		return unit;
+	}
+
+	public void setUnit(int unit) {
+		this.unit = unit;
 	}
 
 	public List<Link> getLinks() {
@@ -68,15 +83,7 @@ public class Department implements Serializable {
 		this.links = links;
 	}
 
-	public void addLink(Link link){
-		boolean isExist = false;
-		for (Link eachLink : links) {
-			if(eachLink.getRel().equalsIgnoreCase(link.getRel())) {
-				isExist = true;
-				break;
-			}
-		}
-		if(!isExist)
-			links.add(link);
+	public void addLink(Link link) {
+		links.add(link);
 	}
 }

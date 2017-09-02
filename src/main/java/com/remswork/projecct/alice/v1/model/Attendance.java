@@ -1,6 +1,5 @@
-package com.remswork.project.alice.model;
+package com.remswork.projecct.alice.v1.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,35 +8,28 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Assignment implements Serializable {
+public class Attendance {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private long id;
-    private String title;
+    private long id;
     private String date;
-    private int itemTotal;
-    private int score;
+    private int status;
     private Student student;
     private Subject subject;
-    private Term term;
     private List<Link> links;
 
-    public Assignment() {
-       links = new ArrayList<>();
+
+    public Attendance() {
+    	links = new ArrayList<Link>();
     }
 
-    public Assignment(String title, String date, int itemTotal, int score) {
-        this.title = title;
+    public Attendance(String date, int status) {
+        this();
         this.date = date;
-        this.itemTotal = itemTotal;
-        this.score = score;
+        this.status = status;
     }
 
-    public Assignment(long id, String title, String date, int itemTotal, int score) {
-        this(title, date, itemTotal, score);
+    public Attendance(long id, String date, int status) {
+        this(date, status);
         this.id = id;
     }
 
@@ -49,14 +41,6 @@ public class Assignment implements Serializable {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDate() {
         return date;
     }
@@ -65,20 +49,12 @@ public class Assignment implements Serializable {
         this.date = date;
     }
 
-    public int getItemTotal() {
-        return itemTotal;
+    public int getStatus() {
+        return status;
     }
 
-    public void setItemTotal(int itemTotal) {
-        this.itemTotal = itemTotal;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public Student getStudent() {
@@ -95,14 +71,6 @@ public class Assignment implements Serializable {
 
     public void setSubject(Subject subject) {
         this.subject = subject;
-    }
-
-    public Term getTerm() {
-        return term;
-    }
-
-    public void setTerm(Term term) {
-        this.term = term;
     }
 
     public List<Link> getLinks() {

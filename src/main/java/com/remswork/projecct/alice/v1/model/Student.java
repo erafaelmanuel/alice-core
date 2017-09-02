@@ -1,6 +1,5 @@
-package com.remswork.project.alice.model;
+package com.remswork.projecct.alice.v1.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,13 +8,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Student implements Serializable {
+public class Student {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private long id;
+    private long id;
     private long studentNumber;
     private String firstName;
     private String lastName;
@@ -28,8 +23,7 @@ public class Student implements Serializable {
     private List<Link> links;
 
     public Student(){
-        super();
-        links = new ArrayList<>();
+    	links = new ArrayList<Link>();
     }
 
     public Student(long studentNumber, String firstName, String middleName, String lastName,

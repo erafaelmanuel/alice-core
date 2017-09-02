@@ -1,17 +1,11 @@
-package com.remswork.project.alice.model;
-
-import java.io.Serializable;
+package com.remswork.projecct.alice.v1.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class UserDetail implements Serializable {
+public class UserDetail {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private long id;
+    private long id;
     private String username;
     private String password;
     private String userType;
