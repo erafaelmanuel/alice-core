@@ -25,6 +25,7 @@ public class Formula implements Serializable {
     private int recitationPercentage;
     private Subject subject;
     private Teacher teacher;
+    private Term term;
     private List<Link> links;
 
     public Formula() {
@@ -131,8 +132,16 @@ public class Formula implements Serializable {
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
+    
+    public Term getTerm() {
+		return term;
+	}
 
-    public List<Link> getLinks() {
+	public void setTerm(Term term) {
+		this.term = term;
+	}
+
+	public List<Link> getLinks() {
         return links;
     }
 
