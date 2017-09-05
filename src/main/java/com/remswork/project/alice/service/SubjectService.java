@@ -1,9 +1,9 @@
 package com.remswork.project.alice.service;
 
-import java.util.List;
-
 import com.remswork.project.alice.exception.SubjectException;
 import com.remswork.project.alice.model.Subject;
+
+import java.util.List;
 
 public interface SubjectService {
 

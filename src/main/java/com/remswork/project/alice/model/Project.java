@@ -1,6 +1,5 @@
 package com.remswork.project.alice.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,35 +8,28 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Project implements Serializable {
+public class Project {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private long id;
+    private long id;
     private String title;
     private String date;
     private int itemTotal;
-    private int score;
-    private Student student;
-    private Subject subject;
+    private Class _class;
     private Term term;
     private List<Link> links;
 
-    public Project() {
+    public  Project() {
         links = new ArrayList<>();
     }
 
-    public Project(String title, String date, int itemTotal, int score) {
+    public Project(String title, String date, int itemTotal) {
         this.title = title;
         this.date = date;
         this.itemTotal = itemTotal;
-        this.score = score;
     }
 
-    public Project(long id, String title, String date, int itemTotal, int score) {
-        this(title, date, itemTotal, score);
+    public Project(long id, String title, String date, int itemTotal) {
+        this(title, date, itemTotal);
         this.id = id;
     }
 
@@ -73,36 +65,20 @@ public class Project implements Serializable {
         this.itemTotal = itemTotal;
     }
 
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
-    public Subject getSubject() {
-        return subject;
-    }
-
-    public void setSubject(Subject subject) {
-        this.subject = subject;
-    }
-
     public Term getTerm() {
         return term;
     }
 
     public void setTerm(Term term) {
         this.term = term;
+    }
+
+    public Class get_class() {
+        return _class;
+    }
+
+    public void set_class(Class _class) {
+        this._class = _class;
     }
 
     public List<Link> getLinks() {

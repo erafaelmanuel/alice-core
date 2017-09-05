@@ -1,10 +1,10 @@
 package com.remswork.project.alice.service;
 
-import java.util.List;
-import java.util.Set;
-
 import com.remswork.project.alice.exception.ScheduleException;
 import com.remswork.project.alice.model.Schedule;
+
+import java.util.List;
+import java.util.Set;
 
 public interface ScheduleService {
 
