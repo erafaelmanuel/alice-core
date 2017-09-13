@@ -1,6 +1,5 @@
 package com.remswork.project.alice.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,13 +8,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.remswork.project.alice.model.support.Link;
 
 @XmlRootElement
-public class Formula implements Serializable {
+public class Formula {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private long id;
+    private long id;
+    private int totalPercentage;
     private int activityPercentage;
     private int assignmentPercentage;
     private int attendancePercentage;
@@ -32,10 +28,11 @@ public class Formula implements Serializable {
         links = new ArrayList<>();
     }
 
-    public Formula(int activityPercentage, int assignmentPercentage, int attendancePercentage,
+    public Formula(int totalPercentage, int activityPercentage, int assignmentPercentage, int attendancePercentage,
                    int examPercentage, int projectPercentage, int quizPercentage,
                    int recitationPercentage) {
         this();
+        this.totalPercentage = totalPercentage;
         this.activityPercentage = activityPercentage;
         this.assignmentPercentage = assignmentPercentage;
         this.attendancePercentage = attendancePercentage;
@@ -45,11 +42,11 @@ public class Formula implements Serializable {
         this.recitationPercentage = recitationPercentage;
     }
 
-    public Formula(long id, int activityPercentage, int assignmentPercentage, int attendancePercentage,
-                   int examPercentage, int projectPercentage, int quizPercentage,
+    public Formula(long id, int totalPercentage, int activityPercentage, int assignmentPercentage,
+                   int attendancePercentage, int examPercentage, int projectPercentage, int quizPercentage,
                    int recitationPercentage) {
-        this(activityPercentage, assignmentPercentage, attendancePercentage, examPercentage, projectPercentage,
-                quizPercentage, recitationPercentage);
+        this(totalPercentage, activityPercentage, assignmentPercentage, attendancePercentage, examPercentage,
+                projectPercentage, quizPercentage, recitationPercentage);
         this.id = id;
     }
 
@@ -59,6 +56,14 @@ public class Formula implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public int getTotalPercentage() {
+        return totalPercentage;
+    }
+
+    public void setTotalPercentage(int totalPercentage) {
+        this.totalPercentage = totalPercentage;
     }
 
     public int getActivityPercentage() {
@@ -132,16 +137,16 @@ public class Formula implements Serializable {
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
-    
+
     public Term getTerm() {
-		return term;
-	}
+        return term;
+    }
 
-	public void setTerm(Term term) {
-		this.term = term;
-	}
+    public void setTerm(Term term) {
+        this.term = term;
+    }
 
-	public List<Link> getLinks() {
+    public List<Link> getLinks() {
         return links;
     }
 
