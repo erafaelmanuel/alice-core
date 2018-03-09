@@ -16,6 +16,8 @@ public interface SubjectService {
     List<Subject> getSubjectList() throws SubjectException;
 
     List<Subject> getSubjectListByTeacherId(long teacherId) throws SubjectException;
+    
+    List<Subject> getSubjectListByTeacherIdUnique(long teacherId) throws SubjectException;
 
     List<Subject> getSubjectListByStudentId(long studentId) throws SubjectException;
 
